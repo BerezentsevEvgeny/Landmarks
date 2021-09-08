@@ -14,6 +14,7 @@ struct ContentView: View {
             
             MapView()
                 .frame(height: 300)
+                .ignoresSafeArea(edges: .top)
             
             CircleImage()
                 .offset(y: -130)
@@ -24,13 +25,21 @@ struct ContentView: View {
                     .font(.title)
                 HStack {
                     Text("Joshua Tree National Park")
-                        .font(.subheadline)
                     Spacer()
                     Text("California")
-                        .font(.subheadline)
                 }
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                
+                Divider()
+                
+                Text("About Turtle Rock")
+                    .font(.title2)
+                Text("Descriptive text goes here")
             }
             .padding()
+            
+            Spacer()
         }
     }
 }
@@ -38,5 +47,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .previewDevice(/*@START_MENU_TOKEN@*/"iPhone 11"/*@END_MENU_TOKEN@*/)
     }
 }
