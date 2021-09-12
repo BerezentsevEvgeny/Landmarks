@@ -6,12 +6,15 @@
 //
 
 import Foundation
-import Combine
+import Combine  // Работа с ObservableObject
 
+
+// Класс для доступа к массиву данных
 final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
 }
 
+// Функция загрузки данных из  JSON
 func load<T: Decodable>(_ fileName: String) -> T {
     
     let data: Data
