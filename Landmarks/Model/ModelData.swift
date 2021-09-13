@@ -12,7 +12,14 @@ import Combine  // Работа с ObservableObject
 // Класс для доступа к массиву данных
 final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
+    
+    // Работа с экраном категорий
+    var categories: [String: [Landmark]] {
+        Dictionary(grouping: landmarks, by: { $0.category.rawValue})
+    }
 }
+
+
 
 // Функция загрузки данных из  JSON
 func load<T: Decodable>(_ fileName: String) -> T {
