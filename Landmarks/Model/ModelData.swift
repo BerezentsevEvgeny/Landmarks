@@ -13,6 +13,11 @@ import Combine  // Работа с ObservableObject
 final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     
+    // Работа с Избрынными
+    var featured: [Landmark] {
+        landmarks.filter { $0.isFeatured}
+    }
+    
     // Работа с экраном категорий
     var categories: [String: [Landmark]] {
         Dictionary(grouping: landmarks, by: { $0.category.rawValue})
