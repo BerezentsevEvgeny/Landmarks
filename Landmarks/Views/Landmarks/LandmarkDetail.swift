@@ -13,7 +13,7 @@ struct LandmarkDetail: View {
     var landmark: Landmark
     
     // Вычисляем индекс выбранного элемента
-    var landmarkIndex: Int {
+    var landmarkIndex:  Int {
         modelData.landmarks.firstIndex(where: { $0.id == landmark.id })!
     }
     
