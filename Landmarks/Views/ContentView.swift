@@ -13,7 +13,9 @@ struct ContentView: View {
     enum Tab {
         case featured
         case list
+        
     }
+    
     
     
     var body: some View {
