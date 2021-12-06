@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct LandmarksApp: App {
     
+    
     // Инициализируем таким образом это свойство единоразово
     @StateObject private var modelData = ModelData()
     
